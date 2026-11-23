@@ -1,0 +1,25 @@
+return {
+	"folke/snacks.nvim",
+	priority = 1000,
+	lazy = false,
+	opts = {
+		-- dashboard = { enabled = true },
+		--explorer = { enabled = true, replace_netrw = true },
+		picker = { enabled = true },
+		terminal = { enabled = true },
+		notifier = { enabled = true },
+		quickfile = { enabled = true },
+		input = { enabled = true },
+		bigfile = { enabled = true },
+	},
+	keys = {
+		{ "<leader>ff",	function() Snacks.picker.files() end, desc = "Find file",},
+		{ "<leader>fg",	function() Snacks.picker.grep() end, desc = "Live grep",},
+        { "<leader>fb",	function() Snacks.picker.buffers() end, desc = "Buffers",},
+        { "<leader>fh", function() Snacks.picker.help() end, desc = "Help tags",},
+	    { "<leader>e", function() Snacks.explorer() end, desc = "File explorer",},
+		{ "<leader>t", function() Snacks.terminal() end, desc = "Floating terminal",},
+		{ "<leader>n", function() Snacks.notifier.show_history() end, desc = "Notifications",},
+        { "<leader>gs", function() Snacks.picker.git_status() end, desc = "Git Status"},
+	},
+}
